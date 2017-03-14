@@ -16,3 +16,12 @@ wp-content/plugins/hello.php
 /sitemap.xml
 /sitemap.xml.gz
 
+# Include your project-specific ignores in this file
+# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+dist
+bower_components
+node_modules
+npm-debug.log
+yarn-error.log
+vendor
+
