@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="296px" height="225px" viewBox="0 0 296 225" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Bloc 03</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="290" height="219" rx="4"></rect>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.823529412   0 0 0 0 0.854901961   0 0 0 0 0.905882353  0 0 0 0.45 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <mask id="mask-3" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="290" height="219" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-865.000000, -395.000000)">
+            <g id="PREMIERE-LAME" transform="translate(-155.000000, -21.000000)">
+                <g id="Bloc-03" transform="translate(1023.000000, 417.000000)">
+                    <g id="Fond-Bloc-">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use stroke-opacity="0.198228034" stroke="#657077" mask="url(#mask-3)" stroke-width="2" fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                    <text id="Faites-des-choix-col" font-family="OpenSans, Open Sans" font-size="15" font-weight="normal" fill="#949595">
+                        <tspan x="45" y="71">Faites des choix collectifs, </tspan>
+                        <tspan x="45" y="91">testez les connaissances en </tspan>
+                        <tspan x="45" y="111">votant par </tspan>
+                        <tspan x="45" y="131">texto. </tspan>
+                    </text>
+                    <text id="1" font-family="OpenSans, Open Sans" font-size="15" font-weight="normal" fill="#949595">
+                        <tspan x="53" y="195">1</tspan>
+                    </text>
+                    <path d="M37.74,196.782609 C33.06,192.782609 30,190.086957 30,186.782609 C30,184.086957 32.16,182 34.95,182 C36.48,182 38.01,182.695652 39,183.826087 C39.99,182.695652 41.52,182 43.05,182 C45.84,182 48,184.086957 48,186.782609 C48,190.086957 44.94,192.782609 40.26,196.782609 L39,198 L37.74,196.782609 Z" id="Like" stroke="#DBD7D7"></path>
+                    <path d="M29.4953704,163 L260.50487,163" id="Line" stroke="#F0F0F0" stroke-linecap="square"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

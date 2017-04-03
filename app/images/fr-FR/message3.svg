@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="240px" height="103px" viewBox="0 0 240 103" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Message 03</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-596.000000, -764.000000)">
+            <g id="PREMIERE-LAME" transform="translate(-53.000000, 0.000000)">
+                <g id="HEADER" transform="translate(53.000000, 0.000000)">
+                    <g id="Phone" transform="translate(543.000000, 420.000000)">
+                        <g id="Message-03" transform="translate(53.000000, 344.000000)">
+                            <rect id="Rectangle-16" fill="#50E2C1" x="0" y="0" width="240" height="85" rx="15"></rect>
+                            <text id="9:23-AM" font-family="OpenSans, Open Sans" font-size="10" font-weight="normal" fill="#9B9B9B">
+                                <tspan x="203.115723" y="102">9:23 AM</tspan>
+                            </text>
+                            <text id="Faites-des-choix-col" font-family="OpenSans, Open Sans" font-size="13" font-weight="normal" line-spacing="18" fill="#FFFFFF">
+                                <tspan x="21" y="30">Faites des choix collectifs, testez </tspan>
+                                <tspan x="21" y="48">les connaissances en votant par </tspan>
+                                <tspan x="21" y="66">texto. </tspan>
+                            </text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

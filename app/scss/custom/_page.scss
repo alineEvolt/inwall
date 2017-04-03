@@ -1,0 +1,48 @@
+/* ----------------------------- */
+/* ==Pages                       */
+/* ----------------------------- */
+
+.page {
+	> header {
+		height: 60vh;
+		border-bottom: 1px solid $color8;
+		.flex-container {
+			height: 100%;
+		}
+
+		h1 {
+			font-size: $h1-size;
+			color: $color3;
+			text-align: center;
+			margin: 0;
+			line-height: 1.4;
+		}
+
+	}
+	.body {
+		padding: 15vh 0;
+	}
+}
+
+.faq {
+	width: 100%;
+	.wrapper{
+		display: block;
+	}
+	dt {
+		font-size: 2.8rem;
+		font-weight: 300;
+		line-height: 2;
+		padding-top: 3rem;
+	}
+	dd {
+		border-bottom: 1px solid $color8;
+		font-size: 1.4rem;
+		font-weight: 400;
+		line-height: 1.5;
+		padding: 0;
+		-webkit-margin-start: 0;
+		-moz-margin-start: 0;
+		padding-bottom: 5rem;
+	}
+}

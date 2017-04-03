@@ -1,0 +1,58 @@
+/* ----------------------------- */
+/* ==Slider [swiper]             */
+/* ----------------------------- */
+
+.contact-form {
+	margin-top: 7rem;
+	input[type="email"] {
+		margin-bottom: 5rem;
+	}
+	textarea {
+		height: 2vh;
+    resize: none;
+	}
+
+	input[type="email"],
+	textarea,
+	label { font-weight: 300; }
+	label { float: left; margin-bottom: 1rem; }
+
+	input[type="email"],
+	textarea {
+    outline: none;
+    display: block;
+    background: none;
+    border-color: #3d3d3d;
+    border-width: 0 0 1px;
+    width: 100%;
+    &::-webkit-input-placeholder { color: rgba(61,61,61,.46) !important; font-weight: 300; }
+    &::-moz-input-placeholder { color: rgba(61,61,61,.46) !important; font-weight: 300; }
+    &::-moz-placeholder { color: rgba(61,61,61,.46) !important; font-weight: 300; }
+    &::-ms-input-placeholder { color: rgba(61,61,61,.46) !important; font-weight: 300; }
+	}
+	textarea {
+		background: #EFF3F1;
+		@media (max-width: $small) {
+			margin-bottom: 5rem;
+		}
+	}
+
+	.submit {
+		margin: auto 0 0 0;
+		position: relative;
+		padding-left: 2rem;
+		@media (max-width: $small) {
+			padding-left: 0;
+		}
+		input {
+			font-size: 2rem;
+			font-weight: 700;
+			outline: none;
+		}
+		.ajax-loader {
+			position: absolute;
+			bottom: 2rem;
+			right: 0;
+		}
+	}
+}

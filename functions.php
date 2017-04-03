@@ -41,11 +41,18 @@ function inwall_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
+	add_image_size('testi', 340, 340, true);
 
 	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'inwall' ),
-	) );
+	register_nav_menus(
+		array(
+			'menu-1' => esc_html__( 'Primary', 'inwall' ),
+			'menu-2' => esc_html__( 'Footer col 1', 'inwall' ),
+			'menu-3' => esc_html__( 'Footer col 2', 'inwall' ),
+			'menu-4' => esc_html__( 'Footer col 3', 'inwall' ),
+			'menu-5' => esc_html__( 'Footer col 4', 'inwall' )
+		)
+	);
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -92,14 +99,25 @@ function inwall_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'inwall' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'inwall' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'description'   => esc_html__( 'Ajoutez vos widgets ici', 'inwall' ),
+		'before_widget' => '<section id="%1$s" class="%2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
+		'before_title'  => '<h2>',
 		'after_title'   => '</h2>',
 	) );
 }
 add_action( 'widgets_init', 'inwall_widgets_init' );
+
+/**
+* Load font
+*/
+function load_fonts() {
+   wp_register_style('googleFonts',
+'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+   wp_enqueue_style('googleFonts');
+     }
+
+add_action('wp_enqueue_scripts', 'load_fonts');
 
 /**
  * Enqueue scripts and styles.
@@ -107,20 +125,30 @@ add_action( 'widgets_init', 'inwall_widgets_init' );
 function inwall_scripts() {
 	wp_enqueue_style( 'inwall-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'inwall-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	/* à remettre pour le build (prod)*/
+	wp_enqueue_style( 'inwall-selectcss', get_template_directory_uri() . '/dist/css/vendor/jquery-ui.min.css' );
+	wp_enqueue_style( 'evolt-styles', get_template_directory_uri() . '/dist/css/styles.min.css' );
+  //A virer pour le build
 
-	wp_enqueue_script( 'inwall-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	/*wp_enqueue_style( 'inwall-swiper', get_template_directory_uri() . '/bower_components/swiper/dist/css/swiper.css' );
+	wp_enqueue_style( 'inwall-swiper', get_template_directory_uri() . '/bower_components/jquery-ui/themes/base/selectmenu.css' );
+  wp_enqueue_style( 'inwall-styles', get_template_directory_uri() . '/app/css/knacss.css' );*/
+  // end a virer pour le build
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+  wp_enqueue_script( 'inwall-selectjs', get_template_directory_uri() . '/dist/js/vendor/jquery-ui.min.js', array("jquery"), '20171703', true );
+  wp_enqueue_script( 'inwall-functions', get_template_directory_uri() . '/dist/js/main.min.js', array("jquery"), '20171703', true );
+
+	wp_enqueue_script( 'inwall-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20171703', true );
+
 }
+
 add_action( 'wp_enqueue_scripts', 'inwall_scripts' );
 
 /**
- * Implement the Custom Header feature.
+ * add custom posts type
  */
-require get_template_directory() . '/inc/custom-header.php';
+
+require get_template_directory() . '/inc/types.php';
 
 /**
  * Custom template tags for this theme.
@@ -136,8 +164,3 @@ require get_template_directory() . '/inc/extras.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';

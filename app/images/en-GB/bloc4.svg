@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="296px" height="205px" viewBox="0 0 296 205" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Bloc 04</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="290" height="199" rx="4"></rect>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.929411765   0 0 0 0 0.929411765   0 0 0 0 0.929411765  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <mask id="mask-3" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="290" height="199" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.247434701">
+        <g id="Desktop-HD" transform="translate(-1006.000000, -824.000000)">
+            <g id="PREMIERE-LAME" transform="translate(-53.000000, 0.000000)">
+                <g id="Bloc-04" transform="translate(1062.000000, 825.000000)">
+                    <g id="Fond-Bloc-">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use stroke-opacity="0.198228034" stroke="#657077" mask="url(#mask-3)" stroke-width="2" fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                    <text id="Nullam-imperdiet-ips" font-family="OpenSans, Open Sans" font-size="15" font-weight="normal" fill="#949595">
+                        <tspan x="17" y="67">Nullam imperdiet ipsum id </tspan>
+                        <tspan x="17" y="87">urna interdum?</tspan>
+                    </text>
+                    <path d="M24.74,175.782609 C20.06,171.782609 17,169.086957 17,165.782609 C17,163.086957 19.16,161 21.95,161 C23.48,161 25.01,161.695652 26,162.826087 C26.99,161.695652 28.52,161 30.05,161 C32.84,161 35,163.086957 35,165.782609 C35,169.086957 31.94,171.782609 27.26,175.782609 L26,177 L24.74,175.782609 Z" id="Like" fill="#FC573C"></path>
+                    <path d="M17,142 L272.5,142" id="Line" stroke="#F0F0F0" stroke-linecap="square"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

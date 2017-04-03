@@ -1,0 +1,43 @@
+/* ----------------------------- */
+/* ==Features                      */
+/* ----------------------------- */
+
+.features {
+	color: $color2;
+
+	@media ( max-width: $small ) {
+		.bloc {
+			margin-bottom: 6rem;
+			&:nth-last-child(1) {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	@media ( min-width: ( $small + 1 ) ) {
+		.bloc:nth-child(1),
+		.bloc:nth-child(2) {
+			margin-bottom: 6rem;
+		}
+	}
+
+	.bloc .picto, .bloc .text {
+	    display: inline-block;
+	    vertical-align: top;
+	}
+	@media ( max-width: $small ) {
+		h3 {
+			font-size: 2rem;
+		}
+		p {
+			font-weight: 300;
+		}
+		.picto {
+			width: 15% !important;
+			@media (max-width: $tiny) {
+				width: 10% !important;
+				margin-right: 3rem !important;
+			}
+		}
+	}
+}

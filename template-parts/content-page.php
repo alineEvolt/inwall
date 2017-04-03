@@ -1,43 +1,77 @@
 <?php
 /**
- * Template part for displaying page content in page.php
+ * Template part for displaying results in search pages
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package inwall
  */
 
+$idFaq = pll_get_post(271);
+
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
+<section class="page">
+	<?php
+	if ( has_post_thumbnail() ) :
+		echo '<header class="header" style="background: url(' . get_the_post_thumbnail_url() . ' ) no-repeat 50% / 100% auto;">';
+	else:
+		echo '<header class="header">';
+	endif; ?>
+		<div class="flex-container">
+			<div class="w40 flex-item-center">
+				<h1><?php the_title(); ?></h1>
+				<?php
+				if( is_page( $idFaq ) ) :
+					echo get_the_content();
+				endif;
+				?>
+			</div>
+		</div>
+	</header>
 
-	<div class="entry-content">
-		<?php
-			the_content();
+	<?php
+	if( have_rows('faq') ):
+		echo '<dl class="faq">';
+		while ( have_rows('faq') ) : the_row();
+			echo '<dt><span class="wrapper">' . get_sub_field('quest_faq') . '</span></dt>';
+			echo '<dd><span class="wrapper">' . get_sub_field('resp_faq') . '</span></dd>';
+		endwhile;
+		echo '</dl>';
+	endif;
+	?>
+<?php
+	if( !is_page( $idFaq ) ) : ?>
+	<div class="wrapper body">
+		<div class="flex-container">
+			<div class="w100">
+				<?php the_content(); ?>
+			</div>
+		</div>
+	</div>
+<?php
+	endif;
+?>
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'inwall' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
+</section>
+<?php
 
-	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
-			<?php
-				edit_post_link(
-					sprintf(
-						/* translators: %s: Name of current post */
-						esc_html__( 'Edit %s', 'inwall' ),
-						the_title( '<span class="screen-reader-text">"', '"</span>', false )
-					),
-					'<span class="edit-link">',
-					'</span>'
-				);
-			?>
-		</footer><!-- .entry-footer -->
-	<?php endif; ?>
-</article><!-- #post-## -->
+$idContact = pll_get_post(45);
+$idEvolt = pll_get_post(49);
+
+$contact_pages = new WP_Query(
+	array(
+		'post_type' => 'page',
+		'post__in' => array( $idContact, $idEvolt ),
+		'orderby' => 'Id',
+		'order' => 'ASC'
+	)
+);
+
+if ( $contact_pages->have_posts() ) :
+	while ( $contact_pages->have_posts() ) : $contact_pages->the_post();
+
+		echo get_template_part('/template-parts/content', 'section');
+
+	 endwhile;
+endif;

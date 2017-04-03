@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="296px" height="245px" viewBox="0 0 296 245" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Bloc 02</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="290" height="239" rx="4"></rect>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.823529412   0 0 0 0 0.854901961   0 0 0 0 0.905882353  0 0 0 0.45 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <mask id="mask-3" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="290" height="239" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-130.000000, -571.000000)">
+            <g id="PREMIERE-LAME" transform="translate(-155.000000, -21.000000)">
+                <g id="Bloc-02" transform="translate(288.000000, 593.000000)">
+                    <g id="Fond-Bloc-">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use stroke-opacity="0.198228034" stroke="#657077" mask="url(#mask-3)" stroke-width="2" fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                    <text id="3" font-family="OpenSans, Open Sans" font-size="15" font-weight="normal" fill="#949595">
+                        <tspan x="53" y="216">3</tspan>
+                    </text>
+                    <path d="M37.74,216.782609 C33.06,212.782609 30,210.086957 30,206.782609 C30,204.086957 32.16,202 34.95,202 C36.48,202 38.01,202.695652 39,203.826087 C39.99,202.695652 41.52,202 43.05,202 C45.84,202 48,204.086957 48,206.782609 C48,210.086957 44.94,212.782609 40.26,216.782609 L39,218 L37.74,216.782609 Z" id="Like" fill="#DDDADA"></path>
+                    <path d="M30.4994792,183 L270.5,183" id="Line" stroke="#F0F0F0" stroke-linecap="square"></path>
+                    <text id="Avec-Inwall,-facilit" font-family="OpenSans, Open Sans" font-size="15" font-weight="normal" fill="#949595">
+                        <tspan x="44" y="71">Avec Inwall, facilitez </tspan>
+                        <tspan x="44" y="91">l’échange dans vos réunions, </tspan>
+                        <tspan x="44" y="111">conférences, formations… </tspan>
+                        <tspan x="44" y="131">grâce à l’envoi de simples </tspan>
+                        <tspan x="44" y="151">textos. </tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

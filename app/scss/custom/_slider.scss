@@ -1,0 +1,126 @@
+/* ----------------------------- */
+/* ==Slider [swiper]             */
+/* ----------------------------- */
+
+.testimonials {
+	height: 570px;
+	@media (min-width: ( $small + 1)) and (max-width: 1024px) and (orientation: portrait) {
+  		height: 600px;
+  	}
+	@media ( max-width: $medium ) and (orientation: landscape) {
+		height: 470px;
+	}
+	.flex-container, .flex-container > div {
+		height: 100%;
+	}
+	.swiper-container {
+    width: 100%;
+    height: 100%;
+
+    .swiper-slide {
+      text-align: center;
+      background: #fff;
+      width: 59%;
+      display: flex;
+      flex-direction: column;
+      opacity: .3;
+      transition: opacity .3s ease;
+      @media (max-width: $small) {
+      	width: 95%;
+      }
+
+      &.swiper-slide-active {
+      	opacity: 1;
+      }
+
+	    .photo {
+	    	display: block;
+	    	margin: 0 auto;
+	    	width: 500px;
+	    	white-space: nowrap;
+	    	margin-bottom: 5rem;
+	    	@media (max-width: $small) {
+	    		width: 90%;
+	    	}
+	    	img {
+	    		border-radius: 100%;
+	    		width: 170px;
+	    		height: auto;
+	    	}
+	    	figcaption {
+	    		color: #9B9B9B;
+	    		font-size: 1.4rem;
+	    		font-weight: 400;
+	    		font-style: italic;
+	    		margin-top: 1.5rem;
+	    	}
+	    }
+	    blockquote {
+	    	display: block;
+	    	clear: both;
+	    	padding-left: 0;
+	    	max-width: 700px;
+	    	width: 90%;
+	    	margin: 0 auto;
+	    	p {
+		    	font-size: 2.3rem;
+		    	font-weight: 400;
+		    	font-style: italic;
+		    	@media (max-width: $small) {
+		    		font-size: 1.8rem;
+		    	}
+		    	@media (min-width: ( $small + 1)) and (max-width: 1024px) and (orientation: portrait) {
+		    		font-size: 2rem;
+		    	}
+		    	@media (min-width: ( $small + 1)) and (max-width: 1024px) and (orientation: landscape) {
+		    		font-size: 1.8rem;
+		    	}
+		    	@media ( max-width: $medium ) and (orientation: landscape) {
+		    		font-size: 2rem;
+		    	}
+		    	@media ( min-width: ( $medium + 1 ) ) and (max-width: $large) {
+						font-size: 2.2rem;
+					}
+		    	&:nth-child(1):before {
+		    		content: "\201C";
+				    display: inline-block;
+				    padding-right: 3rem;
+				    height: .4em;
+				    line-height: .9;
+				    @media (max-width: $small) {
+				    	padding-right: 1rem;
+				    }
+		    	}
+		    	&:nth-last-child(1):after {
+		    		content: "\201C";
+				    display: inline-block;
+				    padding-left: 3rem;
+				    height: .4em;
+				    line-height: .9;
+				    @media (max-width: $small) {
+				    	padding-left: 1rem;
+				    }
+		    	}
+	    	}
+	    	&:before {
+		    	display: none;
+	    	}
+	    }
+
+	  }
+
+  }
+
+  .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets { bottom: 0; }
+
+  .swiper-pagination-bullet {
+  	height: 15px;
+  	width: 15px;
+  	background: rgba(61,61,61,.3);
+  	&.swiper-pagination-bullet-active {
+  		background: $color3;
+  	}
+  }
+
+
+}

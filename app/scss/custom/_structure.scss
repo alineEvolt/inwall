@@ -1,0 +1,41 @@
+/* ----------------------------- */
+/* ==structure                   */
+/* ----------------------------- */
+
+body {
+	background: $color2;
+	position: relative;
+}
+
+#masthead {
+	display: flex;
+	justify-content: center;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+
+	@media ( max-width: ( $large - 1 ) ) {
+		max-width: 90%;
+	}
+	@media ( min-width: $large ) {
+		max-width: 1158px;
+	}
+
+}
+
+#main {
+		.section:not(#home) {
+			padding: 15vh 0;
+			width: 100%;
+		}
+}
+
+#page {
+	opacity: 1;
+	transition: opacity .2s ease;
+	&.hide {
+		opacity: 0;
+	}
+}

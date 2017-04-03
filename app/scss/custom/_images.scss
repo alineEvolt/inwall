@@ -1,0 +1,213 @@
+/* ----------------------------- */
+/* ==Images                      */
+/* ----------------------------- */
+
+@media ( max-width: ( $small ) ) {
+  .bloc-paralax {
+    &.posLeft {
+      -webkit-order: 2;
+      -moz-order: 2;
+      order: 2;
+      & + .img-paralax {
+        -webkit-order: 1;
+        -moz-order: 1;
+        order: 1;
+      }
+    }
+    &.posRight {
+      -webkit-order: 2;
+      -moz-order: 2;
+      order: 2;
+      & + .img-paralax {
+        -webkit-order: 1;
+        -moz-order: 1;
+        order: 1;
+      }
+    }
+  }
+  section#comment, section#how {
+    padding-top: 0 !important;
+    .img-paralax .visu.top_right {
+      max-width: 100% !important;
+    }
+  }
+}
+
+@media (min-width: ( $small + 1)) and (max-width: 1024px) and (orientation: portrait) {
+  #comment, #how {
+    padding-top: 0 !important;
+  }
+  .grid-img {
+    display: block !important;
+    .bloc-paralax {
+      width: 100% !important;
+      display: block;
+      &.posLeft {
+        -webkit-order: unset !important;
+        order: unset !important;
+        & + .img-paralax {
+          -webkit-order: unset !important;
+          order: unset !important;
+        }
+      }
+      &.posRight {
+        -webkit-order: unset !important;
+        order: unset !important;
+        & + .img-paralax {
+          -webkit-order: unset !important;
+          order: unset !important;
+        }
+      }
+    }
+  }
+  .img-paralax {
+    min-height: 400px;
+    .visu {
+      .bottom_left {
+        bottom: 0;
+      }
+    }
+  }
+}
+
+@media ( min-width: ( $small + 1 ) ) {
+  .bloc-paralax {
+    &.posLeft {
+      -webkit-order: 1;
+      order: 1;
+      & + .img-paralax {
+        -webkit-order: 2;
+        order: 2;
+      }
+    }
+    &.posRight {
+      -webkit-order: 2;
+      order: 2;
+      & + .img-paralax {
+        -webkit-order: 1;
+        order: 1;
+      }
+    }
+  }
+}
+
+.img-paralax {
+  position: relative;
+  @media ( max-width: $tiny ) {
+    height: 220px;
+  }
+  @media (min-width: ( $small + 1)) and (max-width: 1024px) and (orientation: portrait) {
+    width: 100% !important;
+    display: block;
+  }
+  @media ( max-width: $medium ) and (orientation: landscape) {
+    margin: 0 5rem !important;
+    width: calc(100% / 3 * 2 - 5rem - 0.01px) !important;
+
+  }
+
+  .visu {
+  	position: absolute;
+    @media ( max-width: $tiny ) {
+      max-height: 220px;
+      img {
+        max-height: 220px;
+        width: auto;
+      }
+    }
+  	&.visu-1 {
+  		z-index: 0;
+  	}
+  	&.visu-2 {
+  		z-index: 10;
+  	}
+  	&.top_left {
+  		top: 0;
+  		left: 0;
+      @media ( max-width: $tiny ) {
+        max-width: 50%;
+      }
+  	}
+  	&.top_center {
+  		top: 0;
+  		left: 50%;
+      @media ( max-width: $tiny ) {
+        max-width: 50%;
+      }
+  	}
+  	&.top_right {
+  		top: 0;
+  		right: 0;
+      @media ( max-width: $tiny ) {
+        max-width: 50%;
+      }
+      @media ( max-width: $medium ) and (orientation: landscape) {
+         top: 102px;
+      }
+  	}
+  	&.middle_left {
+  		bottom: 0;
+  		left: 0;
+  	}
+  	&.middle_center {
+  		bottom: 0;
+  		left: 50%;
+  	}
+  	&.middle_right {
+  		bottom: 0;
+  		right: 0;
+  	}
+  	&.bottom_left {
+  		bottom: -10vh;
+  		left: 0;
+      @media ( max-width: $tiny ) {
+        bottom: 0;
+      }
+      @media ( max-width: $medium ) and (orientation: landscape) {
+         bottom: 0;
+      }
+  	}
+  	&.bottom_center {
+  		bottom: -10vh;
+  		left: 50%;
+      @media ( max-width: $tiny ) {
+        bottom: 0;
+      }
+  	}
+  	&.bottom_right {
+  		bottom: -10vh;
+  		right: 0;
+      @media ( max-width: $tiny ) {
+        bottom: 0;
+      }
+  	}
+    &.top_left, &.top_center, &.top_right {
+      transform: translateY(-50px);
+      opacity: 0;
+      transition: all 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      &.visu-2 {
+        transition: opacity .3s ease, transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+
+      &.move {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    &.middle_left, &.middle_center, &.middle_right,
+    &.bottom_left, &.bottom_center, &.bottom_right {
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      &.visu-2 {
+        transition: opacity .3s ease, transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+
+      &.move {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+  }
+}

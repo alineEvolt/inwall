@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="18px" height="16px" viewBox="0 0 18 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Like</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-159.000000, -496.000000)" fill="#FC573C">
+            <g id="PREMIERE-LAME" transform="translate(-53.000000, 0.000000)">
+                <g id="Bloc-01" transform="translate(195.000000, 354.000000)">
+                    <path d="M24.74,156.782609 C20.06,152.782609 17,150.086957 17,146.782609 C17,144.086957 19.16,142 21.95,142 C23.48,142 25.01,142.695652 26,143.826087 C26.99,142.695652 28.52,142 30.05,142 C32.84,142 35,144.086957 35,146.782609 C35,150.086957 31.94,152.782609 27.26,156.782609 L26,158 L24.74,156.782609 Z" id="Like"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
