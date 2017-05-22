@@ -4,13 +4,14 @@
 
 #home {
 	@media ( min-width: ( $small + 1) ) {
-		height: calc(100vh - 8rem);
+		height: calc(100vh - 6.4rem);
 		overflow: hidden;
 	}
 	.bloc-top {
     z-index: 10;
     position: relative;
     transition: transform 0.4s cubic-bezier(.29,.69,.29,1) 2s;
+    padding-top: 5rem;
     @media ( max-width: $small ) {
     	height: auto;
     	.intro {
@@ -37,12 +38,43 @@
 			height: 100%;
 		}
 	}
+	.join-wall {
+
+		.wall-link {
+			width: 250px;
+			margin: 0 auto;
+			transition: width .3s ease;
+			&.animwidth {
+				width: 250px;
+				@media (min-width: ($small + 1)) and (max-width: 1024px) and (orientation: portrait) {
+					width: 220px;
+				}
+
+				.wall-link {
+					pointer-events: none;
+				}
+			}
+		}
+
+		.submit {
+			display: inline-block !important;
+			padding: 0;
+			border: none !important;
+			padding: 0 !important;
+			background: $color2 url(../images/arrow-right-grey.svg) no-repeat 50% 50% / 16px 15px !important;
+			width: 50px;
+			height: 36px;
+			position: absolute !important;
+			top: 2px;
+			left: 198px;
+		}
+	}
 }
 
 #anim_home {
 	position: relative;
 	@media ( min-width: ( $small + 1) ) {
-		height: calc(100vh - 8rem);
+		height: calc(100vh - 6.4rem);
 		overflow: hidden;
 	}
 	.inner {
@@ -170,12 +202,14 @@
 
 		@media ( min-width: ( $small + 1) ) {
 			position: absolute;
-			bottom: 0;
+			bottom: -8px;
 			left: 0;
 			transform: translateY(60%);
 			img {
-				height: calc(80vh - 8rem);
+				height: calc(70vh - 8rem);
 				width: auto;
+				display: block;
+				margin: 0 auto;
 			}
 		}
 
@@ -189,6 +223,8 @@
 			position: absolute;
 			text-align: center;
 			left: 50%;
+			display: block;
+			height: auto;
 			@media ( max-width: $small ) {
 				margin-left: -125px;
 			}
@@ -197,7 +233,8 @@
 				opacity: 0;
 			}
 			img {
-				width: 100%;
+				width: 95%;
+				display: block;
 				height: auto;
 			}
 
@@ -251,11 +288,14 @@
 			width: 30%;
 		}
 		img {
-			width: 100%;
+			width: 85%;
 			height: auto;
+			@media (max-width: $small) {
+				width: 100%;
+			}
 		}
 		.like {
-			width: 6.2068%;
+			width: 6%;
 			height: auto;
 			position: absolute;
 			img {
@@ -267,15 +307,15 @@
 		&.bloc1 {
 			transition: transform .5s cubic-bezier(.53,-0.15,.36,1.27) 3s;
 			.like {
-				left: 11%;
-				bottom: 14.5%;
+				left: 9%;
+				bottom: 11%;
 			}
 			@media ( max-width: $small ) {
 				position: relative;
 			}
 			@media ( min-width: ( $small + 1) ) {
-				top: 15%;
-				left: 9%;
+				top: 25%;
+				left: 8%;
 			}
 			@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
 				top: 22%;
@@ -293,15 +333,15 @@
 		&.bloc2 {
 			transition: transform .5s cubic-bezier(.53,-0.15,.36,1.27) 4s;
 			.like {
-				left: 11%;
-				bottom: 10.5%;
+				left: 9%;
+				bottom: 7.5%;
 			}
 			@media ( max-width: $small ) {
 				position: relative;
 			}
 			@media ( min-width: ( $small + 1) ) {
-				top: 55%;
-				left: 12%;
+				top: 60%;
+				left: 15%;
 			}
 			@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
 				top: 55%;
@@ -322,8 +362,8 @@
 				position: relative;
 			}
 			@media ( min-width: ( $small + 1) ) {
-				top: 25%;
-				left: 67%;
+				top: 30%;
+				left: 65%;
 			}
 			@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
 				top: 27%;

@@ -2,8 +2,133 @@
 /* ==Footer                      */
 /* ----------------------------- */
 
+.wall-section {
+	background: #273445;
+	height: 11.6rem;
+	line-height: 11.6rem;
+	@media (max-width: $small) and (orientation: portrait) {
+		padding: 7rem 0;
+		height: auto;
+		line-height: $line-height;
+		.w40 {
+			.input {
+				.inputLink {
+					font-size: 1.5rem;
+				}
+			}
+		}
+	}
+	@media (max-width: $small) and (orientation: landscape) {
+		padding: 7rem 0;
+		height: auto;
+		line-height: $line-height;
+		.w40 {
+			.input {
+				width: 100%;
+				//text-align: right;
+				position: relative;
+				.inputLink {
+					font-size: 1.5rem;
+				}
+			}
+		}
+	}
+
+	.flex-container, .w60, .w40 {
+		height: 100%;
+	}
+
+	label {
+		background: url(../images/wall-footer.svg) no-repeat 0 50% / 50px 52px;
+		color: #D2DAE7;
+		font-size: 2.2rem;
+		font-weight: 300;
+		height: 11.6rem;
+		line-height: 11.6rem;
+		padding-left: 8rem;
+		margin: 0;
+		display: block;
+		@media (max-width: $small) and (orientation: portrait) {
+			height: auto;
+			line-height: $line-height;
+			padding: 1.5rem 0 1.5rem 6rem;
+			margin-bottom: 1rem;
+			font-size: 1.8rem;
+		}
+		@media (max-width: $small) and (orientation: landscape) {
+			height: 52px;;
+			line-height: 52px;
+			padding-left: 6rem;
+			margin-bottom: 2rem;
+			font-size: 1.8rem;
+		}
+		@media (min-width: ($small + 1) ) and (max-width: $medium) {
+			padding-left: 7rem;
+			span {
+				font-size: 1.7rem;
+				line-height: 1.5 !important;
+				display: inline-block;
+				vertical-align: middle;
+
+			}
+		}
+		@media (min-width: ($small + 1)) and (max-width: $large) and (orientation: portrait) {
+			span {
+				line-height: normal;
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+	}
+	.input {
+		position: relative;
+		.inputLink, .submit {
+			display: inline-block;
+			vertical-align: middle;
+		}
+		.inputLink {
+			background: $color2;
+			border: none;
+			border-radius: 100px 0 0 100px;
+			height: 5rem;
+			line-height: 5rem;
+			padding: 0 5rem 0 2.5rem;
+			width: 260px;
+			font-size: 1.5rem;
+			@media (min-width: ($small + 1)) and (max-width: 1024px) and (orientation: portrait) {
+				margin-left: 2rem;
+			}
+			&:focus {
+				outline: none;
+			}
+			&::-webkit-input-placeholder { color: rgba(0,0,0,0.3) !important; }
+      &::-moz-input-placeholder { color: rgba(0,0,0,0.3) !important; }
+      &::-moz-placeholder { color: rgba(0,0,0,0.3) !important; }
+      &::-ms-input-placeholder { color: rgba(0,0,0,0.3) !important; }
+		}
+		.submit {
+			background: $color2 url(../images/arrow-right-grey.svg) no-repeat 50% 50% / 16px 14px;
+			width: 50px;
+			height: 5rem;
+			line-height: 5rem;
+			border-radius: 0 100px 100px 0;
+			border: none;
+			margin-left: -4px;
+			&:hover {
+				cusror: pointer;
+			}
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+}
+
 #footer {
 	background: $color10;
+	/*@media (min-width: $small) and (orientation: land) {
+		height: 28rem;
+	}*/
 	.logo {
 		line-height: 6rem;
 		img {
@@ -20,16 +145,81 @@
 	    padding: 0;
 	    li {
 	    	margin: 0;
-		    font-size: 1.2rem;
-		    font-weight: 400;
+		    font-size: 1.6rem;
+		    font-weight: 300;
 		    line-height: 2;
 	    }
 		}
-		@media(max-width: $small) {
+		/*@media (max-width: $tiny) {
 			.one-quarter {
 				width: 50%;
 				float: left;
 				margin-bottom: 4.5rem;
+				&:nth-child(3) {
+					clear: both;
+				}
+			}
+		}*/
+		@media (min-width: ($tiny + 1)) and (max-width: $small) and (orientation: portrait) {
+			.one-quarter {
+				width: 50%;
+				float: left;
+				margin-bottom: 4.5rem;
+				&:nth-child(3) {
+					clear: both;
+				}
+			}
+		}
+		.social-network {
+			h3 {
+				font-size: 1.6rem;
+				font-weight: 300;
+				line-height: 1;
+				margin: 0 0 2rem;
+			}
+			ul {
+				list-style-type: none;
+				list-style-position: outside;
+				margin: 0;
+				padding: 0;
+				li {
+					display: inline-block;
+					height: 4rem;
+					width: 4rem;
+					line-height: 4rem;
+					overflow: hidden;
+					position: relative;
+					padding: 0;
+					margin: 0 1rem;
+					&:nth-child(1) {
+						margin-left: 0;
+					}
+					span {
+						position: absolute;
+						left: -100%;
+						top: -100%;
+					}
+					a {
+						display: block;
+						height: 100%;
+						width: 100%;
+					}
+					&.twitter {
+						a {
+							background: url(../images/twitter.svg) no-repeat 0 0 / 40px 40px;
+						}
+					}
+					&.facebook {
+						a {
+							background: url(../images/facebook.svg) no-repeat 0 0 / 40px 40px;
+						}
+					}
+					&.linkedin {
+						a {
+							background: url(../images/linkedin.svg) no-repeat 0 0 / 40px 40px;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -60,6 +250,9 @@
 	    font-weight: 300;
 	    line-height: 1;
 	    margin: 0;
+	    img {
+	    	width: 14px;
+	    }
 	    @media ( max-width: $small) {
 	    	line-height: 1.4;
 	    }

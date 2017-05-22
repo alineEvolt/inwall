@@ -26,15 +26,29 @@ function inwall_customize_preview_js() {
 add_action( 'customize_preview_init', 'inwall_customize_preview_js' );
 
 //Traductions de chaînes
-		//Header
 pll_register_string('header', 'buy');
+pll_register_string('header', 'pricing');
 pll_register_string('header', 'close');
 pll_register_string('header', 'log in');
-pll_register_string('header', 'Join an existing wall');
+pll_register_string('footer', 'Vous souhaitez rejoindre un mur existant&nbsp;?');
+pll_register_string('footer', 'Réseaux sociaux');
+pll_register_string('header', 'Join a wall');
 pll_register_string('header', 'Enter your phone number');
+pll_register_string('slogan', 'Quand le texto révolutionne vos réunions, conférences, formations, cours...');
 pll_register_string('video', 'Your browser does not support the video tag.');
 pll_register_string('pricing', 'Monthly');
 pll_register_string('pricing', 'Yearly');
-pll_register_string('pricing', 'HT/<br />an');
-pll_register_string('pricing', 'HT/<br />mois');
-pll_register_string('pricing', 'Engagement minimum d\'un an');
+pll_register_string('pricing', '€ HT');
+pll_register_string('pricing', 'par mois');
+pll_register_string('pricing', 'par an');
+pll_register_string('pricing', 'Engagement minimum de 2 mois');
+pll_register_string('pricing', 'Événements <strong>illimités</strong>');
+pll_register_string('pricing', 'Participants <strong>illimités</strong>');
+pll_register_string('pricing', 'Interactions <strong>illimitées</strong>');
+pll_register_string('pricing', 'Module brainstorm');
+pll_register_string('pricing', 'Module sondage');
+pll_register_string('pricing', 'Export excel');
+pll_register_string('pricing', 'Modération');
+pll_register_string('pricing', 'Assistance');
+pll_register_string('pricing', 'Personnalisation');
+pll_register_string('bouton', 'Demander une démo');

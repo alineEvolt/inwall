@@ -16,18 +16,18 @@ body {
 	margin: 0 auto;
 	width: 100%;
 
-	@media ( max-width: ( $large - 1 ) ) {
+	@media ( max-width: ( $medium - 1 ) ) {
 		max-width: 90%;
 	}
-	@media ( min-width: $large ) {
-		max-width: 1158px;
+	@media ( min-width: $medium ) {
+		max-width: 960px;
 	}
 
 }
 
 #main {
 		.section:not(#home) {
-			padding: 15vh 0;
+			padding: 6rem 0 7rem;
 			width: 100%;
 		}
 }
@@ -38,4 +38,21 @@ body {
 	&.hide {
 		opacity: 0;
 	}
+}
+
+/*
+ * Let's target IE to respect aspect ratios and sizes for img tags containing SVG files
+ *
+ * [1] IE9
+ * [2] IE10+
+ */
+/* 1 */
+.no-sizes img[src$=".svg"] {
+  width: 100%;
+}
+/* 2 */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  img[src$=".svg"] {
+    width: 100%;
+  }
 }

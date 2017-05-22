@@ -2,25 +2,41 @@
 /* ==Pricing tables              */
 /* ----------------------------- */
 
-/* Toggle */
+.pricing-section {
+	background: url(../images/bg-c2-pricing.svg) no-repeat 50% 293px, url(../images/bg-c-pricing.png) repeat-x 0 0;
+}
 
 .pricing {
+
+	.toggle-pricing {
+		height: 3.5rem;
+		line-height: 3.5rem;
+	}
+
+	h1 {
+		font-size: 2.2rem;
+		color: #273445;
+		font-weight: 700;
+		line-height: 1;
+		margin: 0 0 1rem;
+	}
 
 	text-align: center;
 
 	.toggle_price {
 		display: inline-block;
+		vertical-align: middle;
 
 		.toggle label {
 		  display: block;
-		  width: 50px;
-		  height: 28px;
+		  width: 70px;
+		  height: 35px;
 		  margin: 5px auto;
 		  border-radius: 100px;
-		  transition: all 0.2s ease-in-out;
-		  -webkit-transition: all 0.2s ease-in-out;
-		  background-color: #E6E9EC;
-		  border: 1px solid #E6E9EC;
+		  transition: all .2s ease-in-out;
+		  -webkit-transition: all .2s ease-in-out;
+		  background: #B7BED0;
+		  margin: 0;
 		}
 
 		.toggle input {
@@ -28,14 +44,12 @@
 		}
 
 		i {
-		  height: 22px;
-		  width: 22px;
+		  height: 25px;
+		  width: 25px;
 		  background: #ffffff;
 		  display: inline-block;
-		  border-radius: 100px;
-		  margin-top: 2px;
-		  margin-right: 20px;
-		  margin-left: 2px;
+		  border-radius: 100%;
+		  margin: 5px 40px 5px 5px;
 		  transition: all 0.2s ease-in-out;
 		  -webkit-transition: all 0.2s ease-in-out;
 		  pointer-events: none;
@@ -48,17 +62,17 @@
 		}
 
 		input:checked+label>i {
-		  margin-left: 24px;
+		  margin-left: 40px;
 		}
 		label:active {
 		  background-color: #A6B9CB;
 		}
 		label:active>i {
-		  width: 34px;
+		  width: 25px;
 		  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.20);
 		}
 		input:checked+label:active>i {
-		  margin-left: 18px;
+		  margin-left: 40px;
 		}
 		input:checked+label {
 		  background-color: #50e2c1;
@@ -68,10 +82,21 @@
 
 	.label {
 		display: inline-block;
-		vertical-align: top;
-		font-size: 2.4rem;
-		font-weight: 300;
+		vertical-align: middle;
+		font-size: 1.8rem;
 		padding: 0 3rem;
+		color: rgba(39,52,69,.4);
+		transition: color .2s ease;
+		&.label1 {
+			&.checked {
+				color: rgba(39,52,69,1);
+			}
+		}
+		&.label2 {
+			&.checked {
+				color: rgba(39,52,69,1);
+			}
+		}
 		@media (max-width: $tiny) {
 			padding: 0 1rem;
 		}
@@ -86,14 +111,12 @@
 	.intro {
 		text-align: center;
 		font-size: 1.8rem;
-		font-weight: 400;
-		@media (max-width: $tiny) {
-			width: 70%;
-			margin: 0 auto;
-		}
-		@media (min-width: ($tiny + 1 ) ) and (max-width: $small) {
-			width: 60%;
-			margin: 0 auto;
+		color: #7E8890;
+		margin: 0 0 4rem;
+		@media (max-width: $small) {
+			font-size: 1.5rem !important;
+			//width: 100%;
+			//margin: 0 auto;
 		}
 	}
 
@@ -101,7 +124,11 @@
 
 .pricing-tables {
 	margin-top: 8rem;
-	padding-bottom: 7vh;
+	margin-bottom: 10rem;
+	padding: 0 8rem;
+	@media (max-width: $small) {
+		padding: 0 1rem;
+	}
 	.price {
 		.year {
 			display: none;
@@ -128,33 +155,31 @@
 		}
 	}
 	.pricing-table {
-		padding: 18px 18px 18px 14px;
-		@media (max-width: $medium ) {
-			margin-bottom: 5vh;
+		background: $color2;
+		box-shadow: 0 11px 47px 7px rgba(71, 73, 80, .15);
+		border-radius: 4px;
+		@media (max-width: $small) {
+			margin-bottom: 4rem;
+			&:nth-last-child(1) {
+				margin-bottom: 1rem;
+			}
 		}
-		&:nth-last-child(1) {
-			margin-bottom: 0;
+		@media (min-width: ($small + 1)) and (max-width: 1024px) and (orientation: portrait) {
+			margin-bottom: 4rem;
+			&:nth-last-child(1) {
+				margin-bottom: 1rem;
+			}
 		}
 		.inner-table {
-			box-shadow: 0 9px 21px 0 rgba(210, 218, 231, .55);
-			padding-bottom: 5vh;
 			.body {
-				padding: 5vh 0;
-				width: 250px;
-				margin: 0 auto;
-				@media (max-width: $tiny) {
-					padding: 10.7rem 0 5vh;
-					width: 75%;
-				}
-				@media (min-width: ($small + 1) ) and (max-width: $small) {
-					padding: 10.7rem 0 5vh;
-					width: 65%;
-				}
+				padding: 4rem;
 			}
 			.btn {
 				display: inline-block;
 				color: $color11;
 				border-color: $color11;
+				margin-top: 2rem;
+				padding: 0 4rem;
 				&:hover, &:focus {
 					background: $color11;
 					color: $color2;
@@ -162,39 +187,41 @@
 			}
 			h3, p { color: $color5; }
 			h3 {
-				font-size: 6rem;
-				line-height: 1;
-			}
-			.subtitle {
-				font-size: 1.4rem;
-				line-height: 1;
-				margin-bottom: 2rem;
+				font-size: 1.8rem;
+				font-weight: 700;
+				text-transform: uppercase;
+				line-height: 8rem;
+				text-align: center;
+				border-bottom: 1px solid #E3E3E3;
+				margin: 0;
 			}
 			.price {
-				font-size: 4.8rem;
+				font-size: 3.6rem;
 				font-weight: 700;
-				margin-bottom: 2rem;
-				sup {
-					font-size: 1.4rem;
+				color: #273445;
+				text-align: center;
+				line-height: 10px;
+				small, span span {
+					font-size: 1.6rem;
 					font-weight: 700;
 					line-height: 1;
+				}
+				small {
 					display: inline-block;
+					margin-left: -4px;
 				}
 			}
-			.features {
-				color: rgba(61,61,61,.6);
+			.features-pricing {
+				margin-top: 5rem;
+				color: #7E8890;
 				list-style-type: none;
 				list-style-position: outside;
-				width: 85%;
-				@media (max-width: $small) {
-					width: 100%;
-				}
 				li {
-					color: rgba(61,61,61,.6);
+					color: #7E8890;
 					font-size: 1.6rem;
-					font-weight: 300;
+					line-height: 2.3;
 					strong {
-						font-weight: 600;
+						font-weight: 700;
 					}
 					&.feature-ok:after, &.feature-no:after {
 						content: '';
@@ -214,10 +241,9 @@
 			}
 		}
 
-		&.free-table {
+		&:nth-child(1) {
 			.inner-table {
-				box-shadow: 0 8px 19px 0 rgba(210, 218, 231, .21);
-				h3, .subtitle {
+				h3 {
 					color: $color3;
 				}
 			}
@@ -233,21 +259,16 @@
 	}
 
 	.info_price {
-			padding-left: calc(4rem - 0.01px);
-			@media (max-width: $medium ) {
-				padding-left: 0;
-			}
+			text-align: center;
 			p {
-				color: rgba(61,61,61,.6);
-				font-size: 1.4rem;
+				color: #7E8890;
+				font-size: 1.6rem;
+				line-height: 2.8;
 			}
 		}
 
 }
 
-.free-table {
-	background: url(../images/free-trial.png) no-repeat 0 0 / 185px 186px;
-}
 
 :lang(en-GB) .free-table {
 	background: url(../images/free-trial-en.png) no-repeat 0 0 / 185px 186px;
@@ -256,19 +277,15 @@
 .other_pricing {
 
 	.other_row {
-		box-shadow: 0 2px 10px 0 rgba(210,218,231, .4);
-		padding: 4.5rem;
-		margin-bottom: 3rem;
-		@media (min-width: ($tiny + 1) ) and (max-width: $small ) {
-			width: 65%;
-			margin: 0 auto 5rem;
-			padding: 4rem 0;
-		}
-		@media (min-width: ( $small +1 ) ) and ( max-width: $medium ) {
-			padding: 4rem 5rem;
-		}
+		border-top: 1px solid #E3E3E3;
+		padding: 4rem 0;
 		&:nth-last-child(1) {
 			margin-bottom: 0;
+		}
+		@media (max-width: $small) {
+			&:nth-last-child(1) {
+				padding-bottom: 0;
+			}
 		}
 
 		h3, .picto {
@@ -277,73 +294,49 @@
 		}
 
 		h3 {
-			font-size: 3.6rem;
+			font-size: 1.8rem;
 			margin: 0 0 0 1rem;
-			@media (min-width: ( $small + 1)) and (max-width: 1024px) and (orientation: landscape) {
-				margin-right: 2rem;
-			}
-			@media ( min-width: ($medium + 1) ) and ( max-width: $large ) {
-				font-size: 3rem;
+			font-weight: 400;
+			width: calc(100% - 77px);
+			text-align: center;
+			@media (max-width: $small) {
+				width: auto;
 			}
 		}
 
 		.title {
-			@media (min-width: ( $small + 1)) and (max-width: 1024px) and (orientation: portrait) {
-				width: 100% !important;
-			}
-
-			@media ( max-width: $medium ) {
-				margin-bottom: 1.5rem;
+			@media (max-width: $small) {
+				text-align: center;
+				margin-bottom: 2rem;
 			}
 		}
 
 		.picto {
 			width: 57px;
-			@media ( min-width: ($medium + 1) ) and ( max-width: $large ) {
-				width: 50px;
-			}
-
 		}
 		.btn {
-			margin: 0;
-			padding: 0;
 			@media (max-width: $small) {
-				display: inline-block !important;
-				font-size: 2rem;
-				margin-top: 3rem;
+				display: inline-block;
+				margin-top: 0;
 			}
-			@media (min-width: ( $small + 1)) and (max-width: 1024px) and (orientation: landscape) {
-				padding: 0 5rem;
-				margin-left: 2rem;
-			}
-			@media ( max-width: $medium ) {
-				padding: 0 5rem;
+			@media (min-width: ($small + 1)) {
+				margin: 0;
+				padding: 0;
 			}
 		}
 
 		.text {
+			@media (max-width: $small) {
+				margin-bottom: 2rem;
+			}
 			p {
+				color: #7E8890;
 				font-size: 1.6rem;
-				font-weight: 400;
-				@media ( min-width: ($medium + 1) ) and ( max-width: $large ) {
-					font-size: 1.5rem;
-				}
-			}
-			@media (min-width: ( $small + 1)) and (max-width: 1024px) and (orientation: portrait) {
-				width: 100% !important;
-			}
-			@media ( max-width: $medium ) {
-				margin-bottom: 1.5rem;
 			}
 			.price {
-				font-size: 2.3rem;
+				font-size: 1.8rem;
 				font-weight: 700;
-				@media (min-width: ( $small + 1)) and (max-width: 1024px) and (orientation: landscape) {
-					margin-right: .2rem;
-				}
-				@media ( min-width: ($medium + 1) ) and ( max-width: $large ) {
-					font-size: 2.1rem;
-				}
+				color: #273445;
 				sup {
 					font-size: 1rem;
 					padding: 0 .8rem 0 .2rem;
@@ -355,7 +348,7 @@
 			}
 		}
 
-		&.blue {
+		.blue {
 			h3 {
 				color: $color12;
 			}
@@ -368,7 +361,7 @@
 				}
 			}
 		}
-		&.green {
+		.green {
 			h3 {
 				color: $color3;
 			}
@@ -381,7 +374,7 @@
 				}
 			}
 		}
-		&.red {
+		.red {
 			h3 {
 				color: $color5;
 			}
@@ -397,4 +390,23 @@
 
 	}
 
+}
+
+html:lang(fr-FR) {
+	.pricing-table {
+		&:nth-child(2) {
+			.inner-table {
+				background: url(../images/free-trial.png) no-repeat -35px -35px / 185px 186px;
+			}
+		}
+	}
+}
+html:lang(en-GB) {
+	.pricing-table {
+		&:nth-child(2) {
+			.inner-table {
+				background: url(../images/free-trial-en.png) no-repeat -35px -35px / 185px 186px;
+			}
+		}
+	}
 }

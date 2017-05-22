@@ -2,7 +2,7 @@
 
 // tiny font sizes (mobile first)
 $base-font-size : 1.6rem !default; // ex. 1.4rem would be "14px" equivalent
-$line-height    : 1.4 !default;
+$line-height    : 1.6 !default;
 $h1-size        : 4.8rem !default; // equiv "32px"
 $h2-size        : 4.8rem !default; // equiv "48px"
 $h3-size        : 2.4rem !default; // equiv "24px"
@@ -13,7 +13,7 @@ $big-txt				: 1.8rem !default; // equiv "18px"
 
 // large font sizes
 $base-font-size-l : 1.6rem !default; // ex. 1.6rem would be "16px" equivalent
-$line-height-l    : 1.5 !default;
+$line-height-l    : 1.9 !default;
 $h1-size-l        : 3.2rem !default; // equiv "32px"
 $h2-size-l        : 2.8rem !default; // equiv "28px"
 $h3-size-l        : 2.4rem !default; // equiv "24px"
@@ -22,12 +22,12 @@ $h5-size-l        : 1.8rem !default; // equiv "18px"
 $h6-size-l        : 1.6rem !default; // equiv "16px"
 
 // font stacks
-$font-stack-common    : 'Open Sans', arial, helvetica, sans-serif !default; // common font
-$font-stack-headings  : 'Open Sans', arial, helvetica, sans-serif !default; // headings font
+$font-stack-common    : 'Lato', arial, helvetica, sans-serif !default; // common font
+$font-stack-headings  : 'Lato', arial, helvetica, sans-serif !default; // headings font
 $font-stack-monospace : consolas, courier, monospace !default; // monospace font
 
 // color scheme
-$color1    : #3D3D3D !default;
+$color1    : #7E8890 !default;
 $color2    : #fff !default;
 $color3    : #50E2C1 !default;
 $color4    : #162546 !default;

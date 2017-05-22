@@ -49,8 +49,10 @@ function inwall_setup() {
 			'menu-1' => esc_html__( 'Primary', 'inwall' ),
 			'menu-2' => esc_html__( 'Footer col 1', 'inwall' ),
 			'menu-3' => esc_html__( 'Footer col 2', 'inwall' ),
+			'menu-3b' => esc_html__( 'Footer col 2 bis', 'inwall' ),
 			'menu-4' => esc_html__( 'Footer col 3', 'inwall' ),
-			'menu-5' => esc_html__( 'Footer col 4', 'inwall' )
+			'menu-5' => esc_html__( 'Footer col 4', 'inwall' ),
+			'menu-6' => esc_html__( 'Header navigation', 'inwall' )
 		)
 	);
 
@@ -113,7 +115,7 @@ add_action( 'widgets_init', 'inwall_widgets_init' );
 */
 function load_fonts() {
    wp_register_style('googleFonts',
-'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+'https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
    wp_enqueue_style('googleFonts');
      }
 
@@ -127,13 +129,15 @@ function inwall_scripts() {
 
 	/* à remettre pour le build (prod)*/
 	wp_enqueue_style( 'inwall-selectcss', get_template_directory_uri() . '/dist/css/vendor/jquery-ui.min.css' );
-	wp_enqueue_style( 'evolt-styles', get_template_directory_uri() . '/dist/css/styles.min.css' );
+	//wp_enqueue_style( 'evolt-styles', get_template_directory_uri() . '/dist/css/styles.min.css' );
   //A virer pour le build
 
-	/*wp_enqueue_style( 'inwall-swiper', get_template_directory_uri() . '/bower_components/swiper/dist/css/swiper.css' );
+	wp_enqueue_style( 'inwall-swiper', get_template_directory_uri() . '/bower_components/swiper/dist/css/swiper.css' );
 	wp_enqueue_style( 'inwall-swiper', get_template_directory_uri() . '/bower_components/jquery-ui/themes/base/selectmenu.css' );
-  wp_enqueue_style( 'inwall-styles', get_template_directory_uri() . '/app/css/knacss.css' );*/
+  wp_enqueue_style( 'inwall-styles', get_template_directory_uri() . '/app/css/knacss.css' );
   // end a virer pour le build
+
+  wp_enqueue_script( 'inwall-modernirz', get_template_directory_uri() . '/dist/js/vendor/modernizr-3.5.0.min.js', array("jquery"), '20170227', false );
 
   wp_enqueue_script( 'inwall-selectjs', get_template_directory_uri() . '/dist/js/vendor/jquery-ui.min.js', array("jquery"), '20171703', true );
   wp_enqueue_script( 'inwall-functions', get_template_directory_uri() . '/dist/js/main.min.js', array("jquery"), '20171703', true );

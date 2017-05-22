@@ -2,57 +2,51 @@
 /* ==Slider [swiper]             */
 /* ----------------------------- */
 
-.testimonials {
-	height: 570px;
-	@media (min-width: ( $small + 1)) and (max-width: 1024px) and (orientation: portrait) {
-  		height: 600px;
-  	}
-	@media ( max-width: $medium ) and (orientation: landscape) {
-		height: 470px;
+.section {
+	&.section-testi {
+		background: #edf4f4;
+		background: -moz-linear-gradient(top, #edf4f4 0%, #ffffff 100%);
+		background: -webkit-linear-gradient(top, #edf4f4 0%,#ffffff 100%);
+		background: linear-gradient(to bottom, #edf4f4 0%,#ffffff 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edf4f4', endColorstr='#ffffff',GradientType=0 );
 	}
+}
+
+.testimonials {
+	height: 400px;
+	@media (max-width: $small) {
+		height: 530px;
+	}
+
 	.flex-container, .flex-container > div {
 		height: 100%;
 	}
 	.swiper-container {
     width: 100%;
-    height: 100%;
+    height: 370px;
+    @media (max-width: $small) {
+			height: 530px;
+		}
 
     .swiper-slide {
       text-align: center;
-      background: #fff;
-      width: 59%;
+      width: 100%;
       display: flex;
       flex-direction: column;
-      opacity: .3;
       transition: opacity .3s ease;
-      @media (max-width: $small) {
-      	width: 95%;
-      }
-
-      &.swiper-slide-active {
-      	opacity: 1;
-      }
 
 	    .photo {
 	    	display: block;
 	    	margin: 0 auto;
-	    	width: 500px;
+	    	width: 84px;
+	    	height: 84px;
+	    	border-radius: 100%;
 	    	white-space: nowrap;
-	    	margin-bottom: 5rem;
-	    	@media (max-width: $small) {
-	    		width: 90%;
-	    	}
+	    	margin-bottom: 2.2rem;
 	    	img {
 	    		border-radius: 100%;
-	    		width: 170px;
+	    		width: 84px;
 	    		height: auto;
-	    	}
-	    	figcaption {
-	    		color: #9B9B9B;
-	    		font-size: 1.4rem;
-	    		font-weight: 400;
-	    		font-style: italic;
-	    		margin-top: 1.5rem;
 	    	}
 	    }
 	    blockquote {
@@ -62,45 +56,19 @@
 	    	max-width: 700px;
 	    	width: 90%;
 	    	margin: 0 auto;
+	    	.caption {
+	    		color: #626262;
+	    		font-size: 1.8rem;
+	    		font-weight: 700;
+	    		margin-top: 3rem;
+	    		span {
+	    			color: #737373;
+	    			font-weight: 400;
+	    		}
+	    	}
 	    	p {
-		    	font-size: 2.3rem;
-		    	font-weight: 400;
+		    	font-size: 1.8rem;
 		    	font-style: italic;
-		    	@media (max-width: $small) {
-		    		font-size: 1.8rem;
-		    	}
-		    	@media (min-width: ( $small + 1)) and (max-width: 1024px) and (orientation: portrait) {
-		    		font-size: 2rem;
-		    	}
-		    	@media (min-width: ( $small + 1)) and (max-width: 1024px) and (orientation: landscape) {
-		    		font-size: 1.8rem;
-		    	}
-		    	@media ( max-width: $medium ) and (orientation: landscape) {
-		    		font-size: 2rem;
-		    	}
-		    	@media ( min-width: ( $medium + 1 ) ) and (max-width: $large) {
-						font-size: 2.2rem;
-					}
-		    	&:nth-child(1):before {
-		    		content: "\201C";
-				    display: inline-block;
-				    padding-right: 3rem;
-				    height: .4em;
-				    line-height: .9;
-				    @media (max-width: $small) {
-				    	padding-right: 1rem;
-				    }
-		    	}
-		    	&:nth-last-child(1):after {
-		    		content: "\201C";
-				    display: inline-block;
-				    padding-left: 3rem;
-				    height: .4em;
-				    line-height: .9;
-				    @media (max-width: $small) {
-				    	padding-left: 1rem;
-				    }
-		    	}
 	    	}
 	    	&:before {
 		    	display: none;

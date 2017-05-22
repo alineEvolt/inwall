@@ -101,6 +101,7 @@ h1, .#{$kna-namespace}h1-like {
 
 h2, .#{$kna-namespace}h2-like {
   font-size: $h2-size;
+  line-height: 1.3 !important;
   @if variable_exists(h2-size-l) and $h2-size-l != $h2-size {
     @include respond-to("tiny-up") {
       font-size: $h2-size-l;

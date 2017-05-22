@@ -7,20 +7,25 @@
 	display: none;
 }
 
+.noScroll {
+  overflow: hidden;
+}
+
 
 h2 {
-    font-size: 4.8rem;
-    font-weight: 600;
+    font-size: 2.2rem;
+    font-weight: 900;
     color: $color3;
-    margin: 0 0 1rem;
+    margin: 0 0 2.2rem;
+    line-height: 1;
     @media ( max-width: $small ) {
       font-size: 3rem;
     }
 }
 
 h3 {
-    font-size: 2.2rem;
-    font-weight: 600;
+    font-size: 1.8rem;
+    font-weight: 700;
     margin: 0 0 1rem;
 }
 
@@ -36,11 +41,12 @@ h3 {
 	}
 	&#home {
 		.intro {
-			font-size: 3.2rem;
+			font-size: 2.2rem;
+      font-weight: 700;
 	    text-align: center;
-      @media  ( max-width: $extra-large ) {
-        font-size: 2.5rem;
-      }
+      margin-bottom: 3.2rem;
+      line-height: 1.4;
+      color: #4F4F4F;
 		}
     @media (min-width: ( $small + 1)) and (max-width: 1024px) and (orientation: landscape) {
       .w60 {
@@ -62,18 +68,47 @@ h3 {
   &.full-height {
     height: 100vh;
     padding: 7vh 0 !important;
+    .wrapper, .grid, .one-third {
+      height: 100%,
+    }
+    .one-third {
+      display: flex;
+      .contBloc {
+        margin: auto 0;
+      }
+    }
+    @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+      background-size: 60% auto !important;
+      height: auto !important;
+
+    }
+    @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+      background: none !important;
+      height: auto !important;
+    }
+
   }
   @media (max-width: $tiny) {
     &.full-height {
       height: auto !important;
     }
   }
-  @media ( max-width: $small ) {
-    &:not(#home) {
-      background-image: none !important;
+
+}
+
+.home {
+  #main {
+    .section {
+      @media ( max-width: $small ) {
+
+        &:not(#home) {
+          background-image: none !important;
+        }
+      }
+
     }
   }
-
 }
 
 ul {
@@ -84,9 +119,10 @@ ul {
 }
 
 p, li {
+    color: $color1;
     font-size: 1.6rem;
     font-weight: 300;
-    margin: 0 0 2rem;
+    margin: 0;
 }
 
 p:nth-last-child(1),
@@ -125,22 +161,46 @@ li:nth-last-child(1) {
   text-align: center;
   margin-top: 4rem;
   white-space: nowrap;
-  font-size: 2rem;
+  font-size: 1.6rem;
+}
+
+.button {
+  display: block;
+  text-decoration: none;
+  transition: all .3s ease;
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-align: center;
+  > a {
+    background: transparent;
+    border: solid 1px $color3;
+    color: $color3;
+    display: inline-block;
+    text-decoration: none;
+    line-height: 4rem;
+    border-radius: 100px;
+    padding: 0 2rem;
+    transition: all .2s ease;
+    &:hover, &:focus {
+      color: $color2;
+      background: $color3;
+    }
+  }
 }
 
 .btn:not(.submit), .btn input[type="submit"] {
 	background: transparent;
 	display: block;
-	line-height: 5rem;
+	line-height: 4rem;
 	border: solid 1px $color3;
 	border-radius: 100px;
 	color: $color3;
 	text-decoration: none;
-	-webkit-transition: all .3s ease;
-	-moz-transition: all .3s ease;
 	transition: all .3s ease;
 	padding: 0 5rem;
-  font-weight: 600;
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-align: center;
   @media (max-width: $tiny) {
     font-size: 1.5rem;
   }
@@ -160,15 +220,33 @@ li:nth-last-child(1) {
 }
 
 .video-container {
-  display: block;
-  padding-top: 15vh;
-  position: relative;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -480px;
+  width: 960px;
+  //height: 570px;
+  height: 557px;
+  margin-top: -285px;
+  padding: 20px;
+  background: $color2;
+  border-radius: 3px;
+  z-index: 2001;
+  box-shadow: 0 11px 47px 7px rgba(71,73,80,0.2);
+  display: none;
+
+  .close {
+    position: absolute;
+    top: -30px;
+    right: -20px;
+  }
 
   .inner {
     height: 100%;
     width: 100%;
     position: relative;
     background: $color1;
+    overflow: hidden;
 
     .loaded_bar {
       content: '';
@@ -182,7 +260,7 @@ li:nth-last-child(1) {
     }
   }
 
-  .play, .pause {
+  /*.play, .pause {
     height: 110px;
     position: absolute;
     top: 50%;
@@ -203,12 +281,12 @@ li:nth-last-child(1) {
     height: auto   !important;
     transform: scale(0.8);
     transition: transform 1s ease;
-    opacity: .4;
+    //opacity: .4;
     position: relative;
     &.scale {
       transform: scale(1);
     }
-  }
+  }*/
 }
 
 //media queries [Global]
@@ -241,4 +319,67 @@ li:nth-last-child(1) {
     }
   }
 
+}
+
+.section {
+  @media (min-width: ($small + 1)) {
+    .posLeft {
+      -webkit-order: 1;
+      order: 1;
+      margin: auto auto auto 0;
+      & + .img-pos {
+        -webkit-order: 2;
+        order: 2;
+      }
+    }
+    .posRight {
+      -webkit-order: 2;
+      order: 2;
+      margin: auto 0 auto auto;
+      & + .img-pos {
+        -webkit-order: 1;
+        order: 1;
+      }
+    }
+  }
+  &.white-text {
+    &, p, li, p a, h2, h3 {
+      color: $color2;
+      border-color: $color2;
+    }
+    h2 {
+      font-weight: 700;
+    }
+    p a.btn {
+      color: $color2 !important;
+      border-color: $color2 !important;
+      &:hover, &:focus {
+        color: $color3 !important;
+        background: $color2;
+      }
+    }
+  }
+}
+
+.btn-arrow {
+  background: url(../images/arrow-right.svg) no-repeat 100% 50% / 16px 14px;
+  padding-right: 3rem;
+  margin-top: 1.5rem;
+}
+
+#overlay {
+  display: none;
+  background: rgba(0,0,0,0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  height: 100vh;
+  width: 100%;
+  z-index:2000;
+}
+
+#cookie-notice .button,
+#cn-notice-text {
+  display: inline-block;
 }

@@ -2,42 +2,49 @@
 /* ==Features                      */
 /* ----------------------------- */
 
+
+.section-plus {
+	background: #273445;
+	background: -moz-linear-gradient(top, #273445 0%, #273445 50%, #EDF4F4 50%, #EDF4F4 100%);
+	background: -webkit-linear-gradient(top, #273445 0%,#273445 50%,#EDF4F4 50%,#EDF4F4 100%);
+	background: linear-gradient(to bottom, #273445 0%,#273445 50%,#EDF4F4 50%,#EDF4F4 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#273445', endColorstr='#EDF4F4',GradientType=0 );
+	padding-top: 12.7rem !important;
+	@media (max-width: $small) {
+		padding-top: 6rem !important;
+	}
+}
+
 .features {
-	color: $color2;
-
-	@media ( max-width: $small ) {
-		.bloc {
-			margin-bottom: 6rem;
-			&:nth-last-child(1) {
-				margin-bottom: 0;
-			}
-		}
+	background: $color2;
+	border-radius: 4px;
+	box-shadow: 0 11px 47px 7px rgba(71,73,80,.2);
+	padding: 7rem 8rem 3.5rem;
+	@media (max-width: $small) {
+		padding: 0;
+		box-shadow: none;
+	}
+	h3 {
+		color: $color3;
+	}
+	.bloc {
+		margin-bottom: 3.5rem;
 	}
 
-	@media ( min-width: ( $small + 1 ) ) {
-		.bloc:nth-child(1),
-		.bloc:nth-child(2) {
-			margin-bottom: 6rem;
+	.bloc:nth-child(1),
+	.bloc:nth-child(3) {
+			padding-right: 2.5rem;
 		}
-	}
 
 	.bloc .picto, .bloc .text {
 	    display: inline-block;
-	    vertical-align: top;
+	    vertical-align: middle;
 	}
-	@media ( max-width: $small ) {
-		h3 {
-			font-size: 2rem;
-		}
-		p {
-			font-weight: 300;
-		}
-		.picto {
-			width: 15% !important;
-			@media (max-width: $tiny) {
-				width: 10% !important;
-				margin-right: 3rem !important;
-			}
+
+	.bloc .text {
+		padding-left: 3rem;
+		@media (max-width: $small) {
+			padding-left: 2rem;
 		}
 	}
 }

@@ -9,56 +9,21 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'inwall' ); ?></h1>
-				</header><!-- .page-header -->
-
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'inwall' ); ?></p>
-
-					<?php
-						get_search_form();
-
-						the_widget( 'WP_Widget_Recent_Posts' );
-
-						// Only show the widget if site has multiple categories.
-						if ( inwall_categorized_blog() ) :
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'inwall' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-						endif;
-
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'inwall' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-
-						the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	<section class="section">
+		<div class="wrapper">
+			<div class="flex-container">
+				<div class="flex-item-center">
+					<h1>404</h1>
+					<p><strong><?php echo pll__('Oops, la page que vous cherchez est introuvable !'); ?></strong></p>
+					<p><?php echo pll__('La page que vous avez demandée n\'a pas été trouvée.<br /> Il se peut que le lien que vous avez utilisé soit rompu.'); ?></p>
+					<p class="btn"><a href="<?php echo get_bloginfo('url'); ?>"><?php echo ('revenir à la page d\'accueil'); ?></a></p>
+				</div>
+				<div class="flex-item-center">
+					<img src="<?php echo get_template_directory_uri(); ?>/dist/images/mr-wall-404.svg" alt="Mr Wall" />
+				</div>
+			</div>
+		</div>
+	</section>
 
 <?php
 get_footer();

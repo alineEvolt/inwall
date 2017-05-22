@@ -19,7 +19,7 @@ $idFaq = pll_get_post(271);
 		echo '<header class="header">';
 	endif; ?>
 		<div class="flex-container">
-			<div class="w40 flex-item-center">
+			<div class="w40 small-w100 flex-item-center">
 				<h1><?php the_title(); ?></h1>
 				<?php
 				if( is_page( $idFaq ) ) :
@@ -51,7 +51,9 @@ $idFaq = pll_get_post(271);
 	</div>
 <?php
 	endif;
+	wp_reset_postdata();
 ?>
+
 
 </section>
 <?php
@@ -74,4 +76,5 @@ if ( $contact_pages->have_posts() ) :
 		echo get_template_part('/template-parts/content', 'section');
 
 	 endwhile;
+	wp_reset_postdata();
 endif;

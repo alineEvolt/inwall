@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="944px" height="254px" viewBox="0 0 944 254" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>bg-c2-pricing</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="1440" height="258"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD-Copy" transform="translate(-240.000000, -358.000000)">
+            <g id="bg-c2-pricing" transform="translate(0.000000, 354.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Mask"></g>
+                <circle id="Oval-4" fill="#5EBBFF" mask="url(#mask-2)" cx="369" cy="212" r="129"></circle>
+                <circle id="Oval-4" fill="#50E2C1" mask="url(#mask-2)" cx="1109.5" cy="242.5" r="74.5"></circle>
+                <circle id="Oval-4" fill="#FFD800" mask="url(#mask-2)" cx="289" cy="16" r="12"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

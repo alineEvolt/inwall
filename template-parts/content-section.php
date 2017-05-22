@@ -74,12 +74,10 @@ if ( $fullHeightSec ) {
 if( have_rows('section_row') ):
 
 if( $bkgImgQ ) {
-	echo '<section class="section ' . $heightSec . '" id="' . $slug . '" style="background: ' . $bkgColor . ' url(' . $bkgImgUrl . ') no-repeat ' . $posBkg . ' / ' . $largBkg . ' ' . $hautBkg . '; ' . $supPad . '">';
+	echo '<section class="section ' . $heightSec . ' ' . get_field('custom_sec') . '" id="' . $slug . '" style="background: ' . $bkgColor . ' url(' . $bkgImgUrl . ') no-repeat ' . $posBkg . ' / ' . $largBkg . ' ' . $hautBkg . '; ' . $supPad . '">';
 } else {
-	echo '<section class="section ' . $heightSec . '" id="' . $slug . '" style="background: ' . $bkgColor . '; ' . $supPad . '">';
+	echo '<section class="section ' . $heightSec . ' ' . get_field('custom_sec') . '" id="' . $slug . '" style="background: ' . $bkgColor . '; ' . $supPad . '">';
 }
-echo $paddingTop;
-echo $paddingBottom;
 	while ( have_rows('section_row') ) : the_row();
 
 		if( get_row_layout() == 'bloc_contenu'):
@@ -92,7 +90,7 @@ echo $paddingBottom;
 				echo '<div class="grid has-gutter-xl">';
 
 					echo '<div class="' . $blocContLarg . ' ' . $blocContPos . '">';
-						echo $blocContText;
+						echo '<div class="contBloc">' . $blocContText . '</div>';
 					echo '</div>';
 
 				echo '</div>';
@@ -107,11 +105,11 @@ echo $paddingBottom;
 			$blocText = get_sub_field('bloc_contenu_text');
 
 			echo '<div class="wrapper">';
-				echo '<div class="grid has-gutter grid-img">';
+				echo '<div class="flex-container text-visu">';
 
 					if( $posText === 'left' ) {
 
-						echo '<div class="one-third ptl pbxl bloc-paralax posLeft">';
+						echo '<div class="flex-item-center w40 small-w100 tiny-w100 posLeft">';
 							echo $blocText;
 						echo '</div>';
 
@@ -119,7 +117,7 @@ echo $paddingBottom;
 
 					if( $posText === 'right' ) {
 
-						echo '<div class="one-third ptl pbxl bloc-paralax posRight">';
+						echo '<div class="flex-item-center w40 small-w100 tiny-w100 posRight">';
 							echo $blocText;
 						echo '</div>';
 
@@ -127,7 +125,7 @@ echo $paddingBottom;
 
 					if( have_rows('bloc_contenu_imgs') ):
 						$i = 1;
-						echo '<div class="two-thirds img-paralax">';
+						echo '<div class="flex-item w50 small-w100 tiny-w100 img-pos">';
 						while ( have_rows('bloc_contenu_imgs') ) : the_row();
 
 							$visuPar = get_sub_field('bloc_contenu_img');
@@ -135,15 +133,10 @@ echo $paddingBottom;
 							$visuParT = $visuPar['sizes'][ $visuParS ];
 							$width = $visuPar['sizes'][ $visuParS . '-width' ];
 							$height = $visuPar['sizes'][ $visuParS . '-height' ];
-							$visuParPos = get_sub_field('bloc_contenu_img_pos');
 							$margeLeft = '0';
 
-							if( $visuParPos == 'top_center' || $visuParPos == 'middle_center' || $visuParPos == 'bottom_center') {
-								$margeLeft = '-' . ($width / 2) . 'px';
-							}
-
-							echo '<div class="visu visu-' . $i . ' ' . $visuParPos . '" style="margin-left: ' . $margeLeft . ';">';
-								echo '<img src="' . $visuParT . '" alt="" width="' . $width . '" height="' . $height . '" />';
+							echo '<div class="visu visu-' . $i . '">';
+								echo '<img src="' . $visuParT . '" alt="" width="' . $width . '" height="' . $height . '" data-rjs="3" />';
 							echo '</div>';
 
 						$i++;
@@ -162,16 +155,17 @@ echo $paddingBottom;
 			$videoEmbed = get_sub_field('bloc_video_embed');
 
 			//echo '<div class="wrapper">';
-				echo '<div class="video-container">';
+				echo '<div class="video-container" id="video">';
+					echo '<div class="close"><a href="#"><img src="' . get_template_directory_uri() . '/dist/images/close.svg" alt="Fermer" /></a></div>';
 					echo '<div class="inner">';
-						echo '<div class="play"><a href="#"><img src="' . get_template_directory_uri() . '/dist/images/play.svg" alt="Play" /></a></div>';
-						echo '<div class="pause"><a href="#"><img src="' . get_template_directory_uri() . '/dist/images/pause.svg" alt="pause" /></a></div>';
-						echo '<video class="video">';
-							echo '<source src="' . $videoEmbed .'" type="video/mp4">';
-						  	//<source src="movie.ogg" type="video/ogg">
+						//echo '<div class="play"><a href="#"><img src="' . get_template_directory_uri() . '/dist/images/play.svg" alt="Play" /></a></div>';
+						//echo '<div class="pause"><a href="#"><img src="' . get_template_directory_uri() . '/dist/images/pause.svg" alt="pause" /></a></div>';
+						echo '<video class="video" controls>';
+							echo '<source src="' . get_template_directory_uri() . '/inwall-video.mp4" type="video/mp4">';
+						  echo '<source src="' . get_template_directory_uri() . '/inwall-video.ogg" type="video/ogg">';
 							echo pll__('Your browser does not support the video tag.');
 						echo '</video>';
-						echo '<div class="loaded_bar"></div>';
+						//echo '<div class="loaded_bar"></div>';
 					echo '</div>';
 				echo '</div>';
 			//echo '</div>';
@@ -181,7 +175,7 @@ echo $paddingBottom;
 		if( get_row_layout() == 'bloc_features' ):
 
 			echo '<div class="wrapper features">';
-				echo '<div class="grid-2 has-gutter-xl">';
+				echo '<div class="grid-2">';
 
 				if( have_rows('bloc_features_col') ):
 
@@ -192,10 +186,10 @@ echo $paddingBottom;
 						$textF = get_sub_field('bloc_features_text');
 
 						echo '<div class="bloc one-half">';
-							echo '<div class="picto w10 mar2">';
+							echo '<div class="picto w10">';
 								echo '<img src="' . $pictoF .'" alt="" />';
 							echo '</div>';
-							echo '<div class="text w70">';
+							echo '<div class="text w90">';
 								echo '<h3>' . $titleF . '</h3>';
 								echo $textF;
 							echo '</div>';
@@ -212,51 +206,52 @@ echo $paddingBottom;
 		if( get_row_layout() == 'bloc_testi' ):
 
 			echo '<div class="testimonials">';
-				echo '<div class="flex-container">';
-					echo '<div class="w100 center">';
+				echo '<div class="wrapper">';
+					echo '<div class="flex-container">';
+						echo '<div class="w100 center">';
 
-						if( have_rows('testi_rows') ):
+							if( have_rows('testi_rows') ):
 
-						echo '<div class="swiper-container">';
-							echo '<div class="swiper-wrapper">';
+							echo '<div class="swiper-container">';
+								echo '<div class="swiper-wrapper">';
 
-							while( have_rows('testi_rows') ): the_row();
+								while( have_rows('testi_rows') ): the_row();
 
-							$photoTest = get_sub_field('photo_testi');
-							$photoTestUrl = $photoTest['url'];
-							$photoTestAlt = $photoTest['alt'];
-							$photoTestSize = 'testi';
-							$photoTestThumb = $photoTest['sizes'][$photoTestSize];
-							$photoTestW = $photoTest['sizes'][$photoTestSize . '-width' ];
-							$photoTestH = $photoTest['sizes'][$photoTestSize . '-height' ];
+								$photoTest = get_sub_field('photo_testi');
+								$photoTestUrl = $photoTest['url'];
+								$photoTestAlt = $photoTest['alt'];
+								$photoTestSize = 'testi';
+								$photoTestThumb = $photoTest['sizes'][$photoTestSize];
+								$photoTestW = $photoTest['sizes'][$photoTestSize . '-width' ];
+								$photoTestH = $photoTest['sizes'][$photoTestSize . '-height' ];
 
 
-								echo '<div class="swiper-slide">';
+									echo '<div class="swiper-slide">';
 
-									echo '<figure class="photo">';
+										echo '<figure class="photo">';
 
-										echo '<img src="' . $photoTestThumb . '" alt="' . $photoTestAlt . '">';
+											echo '<img src="' . $photoTestThumb . '" alt="' . $photoTestAlt . '" data-rjs="3" />';
 
-										echo '<figcaption>';
-											echo get_sub_field('name_testi') . '<br />' . get_sub_field('statut_testi') . ' <br />';
-											echo '<span>- ' . get_sub_field('society_testi') . ' -</span>';
-										echo '</figcaption>';
+										echo '</figure>';
+										echo '<blockquote>';
+											echo get_sub_field('text_testi');
+											echo '<div class="caption">';
+											echo get_sub_field('name_testi') . '<br />';
+											echo '<span>' . get_sub_field('statut_testi') . '</span>';
+											echo '</div>';
+										echo '</blockquote>';
 
-									echo '</figure>';
-									echo '<blockquote>';
-										echo get_sub_field('text_testi');
-									echo '</blockquote>';
+									echo '</div>';
+
+								endwhile;
 
 								echo '</div>';
-
-							endwhile;
-
+								echo '<div class="swiper-pagination"></div>';
 							echo '</div>';
-							echo '<div class="swiper-pagination"></div>';
+
+							endif;
+
 						echo '</div>';
-
-						endif;
-
 					echo '</div>';
 				echo '</div>';
 			echo '</div>';
@@ -342,8 +337,7 @@ echo $paddingBottom;
 							echo '</ul>';
 
 							echo '</div>';
-							//echo '<div class="txtcenter"><a href="' . get_sub_field('link_pricing') . '" class="btn" target="_blank">' . get_sub_field('btn_pricing') . '</a></div>';
-							echo '<div class="txtcenter"><a href="' . get_sub_field('link_pricing') . '" rel="nofollow" class="btn">' . get_sub_field('btn_pricing') . '</a><script type="text/javascript" src="https://transactions.sendowl.com/assets/sendowl.js" ></script></div>';
+							echo '<div class="txtcenter"><a href="mailto:' . get_sub_field('link_pricing') . '" class="btn">' . get_sub_field('btn_pricing') . '</a></div>';
 						echo '</div>';
 					echo '</div>';
 
@@ -380,7 +374,7 @@ echo $paddingBottom;
 
 							echo '<div class="w20 medium-w100 small-w100 tiny-w100 button">';
 
-								echo '<a href="' . get_sub_field('link_otherprice') . '" class="btn" target="_blank">' . get_sub_field('btn_otherprice') . '</a>';
+								echo '<a href="mailto:' . get_sub_field('link_otherprice') . '" class="btn">' . get_sub_field('btn_otherprice') . '</a>';
 
 							echo '</div>';
 
@@ -398,4 +392,3 @@ echo $paddingBottom;
 endif; // End section_row
 
 ?>
-

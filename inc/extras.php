@@ -117,13 +117,14 @@ function fb_mce_before_init( $settings ) {
             'classes' => 'btn',
             'styles' => array(
               'display' => 'inline-block',
-              'height' => '50px',
-              'line-height' => '50px',
+              'height' => '40px',
+              'line-height' => '40px',
               'text-align' => 'center',
-              'padding' => '0 50px',
+              'padding' => '0 20px',
               'color' => '#50e2c1',
               'border' => 'solid 1px #50e2c1',
               'border-radius' => '100px',
+              'font-size' => '16px',
               'text-decoration' => 'none'
             )
         ),
@@ -133,13 +134,27 @@ function fb_mce_before_init( $settings ) {
             'classes' => 'btn orange',
             'styles' => array(
               'display' => 'inline-block',
-              'height' => '50px',
-              'line-height' => '50px',
+              'height' => '40px',
+              'line-height' => '40px',
               'text-align' => 'center',
-              'padding' => '0 50px',
+              'padding' => '0 20px',
               'color' => '#FF8383',
               'border' => 'solid 1px #FF8383',
               'border-radius' => '100px',
+              'font-size' => '16px',
+              'text-decoration' => 'none'
+            )
+        ),
+        array(
+            'title' => 'Button [fleche]',
+            'selector' => 'a',
+            'classes' => 'btn-arrow',
+            'styles' => array(
+              'display' => 'inline-block',
+              'color' => '#50E2C1',
+              'font-size' => '16px',
+              'text-transform' => 'uppercase',
+              'font-weight' => '400',
               'text-decoration' => 'none'
             )
         ),
@@ -182,3 +197,10 @@ if( function_exists('acf_add_options_page') ) {
     'icon_url'    => false,
   ));
 }
+
+// REMOVE WP EMOJI
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_print_styles', 'print_emoji_styles');
+
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'admin_print_styles', 'print_emoji_styles' );

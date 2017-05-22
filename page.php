@@ -19,6 +19,7 @@ if ( have_posts() ) :
 	while ( have_posts() ) : the_post();
 
 		echo get_template_part('/template-parts/content', 'page');
+		//echo get_template_part('/template-parts/content', 'section');
 
 	 endwhile;
 endif;
